@@ -1,0 +1,14 @@
+-# .row
+-#   = month_calendar do |date|
+-#     = date.day
+.row
+  %table
+    %tbody
+      - User.all.each do |user|
+        %tr
+          %td
+            = image_tag user.avatar, class: 'img'
+          %td
+            = link_to "#{user.first_name} #{user.last_name}", user
+          %td
+            = user.what_i_do

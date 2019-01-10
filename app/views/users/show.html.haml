@@ -1,0 +1,29 @@
+.row
+  %table
+    %tbody
+      %tr
+        %td
+          = image_tag @user.avatar, class: 'img'
+        %td
+          = "#{@user.first_name} #{@user.last_name}"
+      %tr
+        %td
+          Email
+        %td
+          = @user.email
+      %tr
+        %td
+          Phone
+        %td
+          = @user.phone_office
+      %tr
+        %td
+          Time zone
+        %td
+          = @user.time_zone
+      - @user.custom_fields.each do |cf|
+        %tr
+          %td
+            = cf.field_label
+          %td
+            = cf.custom_responses.first.response

@@ -1,0 +1,3 @@
+$('#edit-certificate, #add-certificate').find('.form-wrapper').html("#{j render 'form', item: @item, joining_instance: @joining_instance, certificate_items: @certificate_items}");
+BlueSky.Views.Certificates.form();
+BlueSky.ModalReinitializer.boot({ type: 'certificate', disallowInactivePrereq: true });

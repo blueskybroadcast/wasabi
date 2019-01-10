@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Wasabi
+    %link{:href => "assets/images/apple-icon.png", :rel => "apple-touch-icon", :sizes => "76x76"}/
+    %link{:href => "assets/images/favicon.png", :rel => "icon", :type => "image/png"}/
+    = stylesheet_link_tag    'application', media: 'all'
+    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", :name => "viewport"}/
+    = csrf_meta_tags
+  %body
+    .wrapper
+      .main-panel
+        .content
+          .container-fluid
+            = yield
+      -# %div.sidebar-background{ data: { "background-color" => "black", "image" => "/assets/images/sidebar4.jpg" } }
+      -#= render partial: 'layouts/navbar'
+    = javascript_include_tag 'application'
