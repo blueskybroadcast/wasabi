@@ -14,5 +14,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :what_i_do
       t.timestamps
     end
+
+    add_index :users, :auth_user_id, unique: true
   end
 end
