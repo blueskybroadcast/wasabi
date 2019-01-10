@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_01_09_190743) do
     t.string "what_i_do"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["auth_user_id"], name: "index_users_on_auth_user_id", unique: true
   end
 
 end

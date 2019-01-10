@@ -4,11 +4,11 @@ class User < ApplicationRecord
 
   def self.find_or_create_by_oauth(auth_hash)
     translated_data = User.translated_auth_data(auth_hash)
-    user = User.where(auth_user_id: translated_data['auth_user_id']).first
-    if user.present?
-      user.update!(translated_data)
-    else
+    user = User.where('LOWER(auth_user_id) = ?', translated_data[:auth_user_id].downcase).first
+    if user.nil?
       user = User.create!(translated_data) unless user.present?
+    else
+      user.update!(translated_data)
     end
     user.update_custom_fields
     user
@@ -28,8 +28,6 @@ class User < ApplicationRecord
     end
     true
   end
-
-  private
 
   def self.translated_auth_data(auth_hash)
     {
