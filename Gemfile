@@ -5,8 +5,12 @@ ruby '2.5.1'
 
 gem 'awesome_print'
 gem 'bcrypt', '~> 3.1.7'
+gem 'bootstrap-datepicker-rails'
+gem 'bootstrap', '~> 4.2.1'
+gem 'font-awesome-sass'
 gem 'haml'
 gem 'jbuilder', '~> 2.5'
+gem 'jquery-rails'
 gem 'mini_racer', platforms: :ruby
 gem 'omniauth'
 gem 'omniauth-slack'
@@ -15,9 +19,11 @@ gem 'puma', '~> 3.11'
 gem 'puma_worker_killer'
 gem 'rails', '~> 5.2.2'
 gem 'rack-timeout'
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
+gem "simple_calendar", "~> 2.0"
 gem 'slack-ruby-client'
 gem 'uglifier', '>= 1.3.0'
+gem 'react-rails'
 
 group :test do
   gem 'database_cleaner'

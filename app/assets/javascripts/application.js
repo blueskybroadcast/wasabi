@@ -10,6 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery3
+//= require popper
+//= require jquery_ujs
+//= require moment.min
+//= require bootstrap
+//= require bootstrap-datetimepicker
+//= require bootstrap-select
 //= require rails-ujs
 //= require activestorage
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
