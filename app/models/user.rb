@@ -15,7 +15,7 @@ class User < ApplicationRecord
   end
 
   def update_custom_fields
-    SlackService.new(auth_token: auth_token).user_profile['fields'].each do |field|
+    SlackService.new.user_profile['fields'].each do |field|
       custom_field = CustomField.where(field_id: field[0]).first
       if custom_field.present?
         response = CustomResponse.where(custom_field: custom_field, user: self).first
